@@ -1,9 +1,9 @@
 
-
 #include <iostream>
+#include "opencv_module.hpp"
+#include "Init.hpp"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    init::open_camera();
     return 0;
 }
