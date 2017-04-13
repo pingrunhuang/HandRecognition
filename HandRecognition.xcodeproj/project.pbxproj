@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		014679401E8E630B0087745F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0146793F1E8E630B0087745F /* README.md */; };
 		017BCDBE1E8E51F100FBBF88 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 017BCDBD1E8E51F100FBBF88 /* main.cpp */; };
-		01A89BC31E93385300F7A070 /* MyLib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01A89BC11E93385300F7A070 /* MyLib.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,11 +24,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		012A00041E9E7A9800B26C55 /* training.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = training.hpp; sourceTree = "<group>"; };
 		0146793F1E8E630B0087745F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		017BCDBA1E8E51F100FBBF88 /* HandRecognition */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HandRecognition; sourceTree = BUILT_PRODUCTS_DIR; };
 		017BCDBD1E8E51F100FBBF88 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		01A89BC11E93385300F7A070 /* MyLib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyLib.cpp; sourceTree = "<group>"; };
-		01A89BC21E93385300F7A070 /* MyLib.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MyLib.hpp; sourceTree = "<group>"; };
+		01A89BC21E93385300F7A070 /* main.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = main.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +63,8 @@
 			isa = PBXGroup;
 			children = (
 				017BCDBD1E8E51F100FBBF88 /* main.cpp */,
-				01A89BC11E93385300F7A070 /* MyLib.cpp */,
-				01A89BC21E93385300F7A070 /* MyLib.hpp */,
+				01A89BC21E93385300F7A070 /* main.hpp */,
+				012A00041E9E7A9800B26C55 /* training.hpp */,
 			);
 			path = HandRecognition;
 			sourceTree = "<group>";
@@ -128,7 +127,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				014679401E8E630B0087745F /* README.md in Sources */,
-				01A89BC31E93385300F7A070 /* MyLib.cpp in Sources */,
 				017BCDBE1E8E51F100FBBF88 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

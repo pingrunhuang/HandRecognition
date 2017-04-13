@@ -1,17 +1,27 @@
 //
-//  MyLib.cpp
+//  MyLib.hpp
 //  HandRecognition
 //
 //  Created by huangrunping on 04/04/2017.
 //  Copyright © 2017 Runping. All rights reserved.
 //
 
-#include "MyLib.hpp"
+#ifndef MyLib_hpp
+#define MyLib_hpp
+
+#include <stdio.h>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+
+#endif /* MyLib_hpp */
+
+using namespace std;
+using namespace cv;
 
 /*
  * part 1: image preprocess
  */
-void RGBToYCRCB(cv::InputArray mat, cv::Mat out){
+void RGBToYCRCB(InputArray mat, Mat out){
     cvtColor(mat, out, CV_BGR2YCrCb);
 }
 
@@ -25,7 +35,7 @@ double Cbmax = 105;
 double Cbmin = 80;
 double Crmax = 165;
 double Crmin = 130;
-void DetermineROI(cv::Mat in, cv::Mat out){
+void DetermineROI(cv::Mat & in){
     double Cr, Cb, d1, d2, d3, d4;
     for(int i = 0; i < in.cols; i++){
         for(int j = 0; j < in.rows ; j++){
@@ -37,7 +47,7 @@ void DetermineROI(cv::Mat in, cv::Mat out){
             d3 = sqrt(pow(Cb - Cbmax, 2) + pow(Cr - Crmin, 2));
             d4 = sqrt(pow(Cb - Cbmax, 2) + pow(Cr - Crmax, 2));
             if ( (d1 + d2 + d3 + d4) <= THRESHOLD ){
-                out.at<uchar>(i, j) = 255;// hand region detected
+                in.at<uchar>(i, j) = 255;// hand region detected
             }
         }
     }
@@ -62,19 +72,15 @@ void open_camera(){
     for(;;) {
         cap >> source;
         if( source.empty() ) break;
-            cv::imshow( "source" , source );
-            RGBToYCRCB(source, YCrCb);
-            cv::imshow( "YCrCb" , YCrCb);
-            DetermineROI(YCrCb, ROI);
-            cv::imshow( "ROI" , ROI);
-
-            // wait for 33ms, if users do not press any button, will continue
-            // else, the ASCII code of the button will return
-            if( cv::waitKey(33) >= 0 )
-                break;
-        }
+        cv::imshow( "source" , source );
+        RGBToYCRCB(source, YCrCb);
+        cv::imshow( "YCrCb" , YCrCb);
+        DetermineROI(YCrCb);
+        cv::imshow( "ROI" , ROI);
+        
+        // wait for 33ms, if users do not press any button, will continue
+        // else, the ASCII code of the button will return
+        if( cv::waitKey(33) >= 0 )
+            break;
+    }
 }
-
-
-
-
