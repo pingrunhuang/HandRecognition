@@ -1,0 +1,5 @@
+requests >= 0.14.1
+
+[test]
+mock >= 1.0.1
+unittest2 >= 1, < 2

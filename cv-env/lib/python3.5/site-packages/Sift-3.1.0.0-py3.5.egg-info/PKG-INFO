@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: Sift
+Version: 3.1.0.0
+Summary: Python bindings for Sift Science's API
+Home-page: https://siftscience.com
+Author: Sift Science
+Author-email: support@siftscience.com
+License: UNKNOWN
+Description: 
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
